@@ -19,9 +19,10 @@
 <h1>Search for users!</h1>
 <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
 <form method="post" action="search.php" enctype="multipart/form-data" >
-      Name  <input type="text" name="name" id="name"/></br>
+      <!--Name  <input type="text" name="name" id="name"/></br>
       Email <input type="text" name="email" id="email"/></br>
-      Company Name <input type="text" name="companyname" id="companyname"/></br>
+      Company Name <input type="text" name="companyname" id="companyname"/></br>-->
+        <input type="text" name="criteria" id="criteria"/></br>
       <input type="submit" name="submit" value="Submit" />
 </form>
 <?php
@@ -44,8 +45,8 @@
     }
     // Insert registration info
     // Retrieve data
-    $name = $_POST['name'];
-    $sql_select = "SELECT * FROM registration_tbl WHERE name=\"$name\"";
+    $criteria = $_POST['criteria'];
+    $sql_select = "SELECT * FROM registration_tbl WHERE name=\"$criteria\" OR email=\"$criteria\" OR companyname=\"$criteria\"";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
