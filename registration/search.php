@@ -44,7 +44,8 @@
     }
     // Insert registration info
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl";
+    $name = $_POST['name'];
+    $sql_select = "SELECT * FROM registration_tbl WHERE name=$name";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
