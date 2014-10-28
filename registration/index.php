@@ -47,7 +47,7 @@
     try {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $companyname = $POST['companyname'];
+        $companyname = $_POST['companyname'];
         $date = date("Y-m-d");
 
         // Insert data
