@@ -52,11 +52,12 @@
 
         // Insert data
         $sql_insert = "INSERT INTO registration_tbl (name, email, companyname, date) 
-                   VALUES (?,?,?)";
+                   VALUES (?,?,?, ?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $email);
-        $stmt->bindValue(3, $date);
+        $stmt->bindValue(3, $companyname);
+        $stmt->bindValue(4, $date);
         $stmt->execute();
     }
     catch(Exception $e) {
