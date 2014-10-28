@@ -47,9 +47,11 @@
     try {
         $name = $_POST['name'];
         $email = $_POST['email'];
+        $companyname = $POST['companyname'];
         $date = date("Y-m-d");
+
         // Insert data
-        $sql_insert = "INSERT INTO registration_tbl (name, email, date) 
+        $sql_insert = "INSERT INTO registration_tbl (name, email, companyname, date) 
                    VALUES (?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
@@ -60,7 +62,7 @@
     catch(Exception $e) {
         die(var_dump($e));
     }
-    echo "<h3>Your're registered!</h3>";
+    echo "<h3>You're registered!</h3>";
     }
     // Retrieve data
     $sql_select = "SELECT * FROM registration_tbl";
