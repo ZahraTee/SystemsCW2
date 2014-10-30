@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-<h1>Search for users!</h1>
+<h1>Search for users! Testing</h1>
 <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
 <form method="post" action="search.php" enctype="multipart/form-data" >
       <!--Name  <input type="text" name="name" id="name"/></br>
